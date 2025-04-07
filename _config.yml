@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: DataPlatform Codex
+title: DataPlatform Expressions
 email: javiergonzalez7@gmail.com
-description: Thoughts/Posts
+description: Thoughts/Posts/Works
 url: "https://javigoncompte.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username: jekyll
