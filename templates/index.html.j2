@@ -3,86 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>marimo WebAssembly + GitHub Pages Template</title>
+  <title>Javier Gonzalez Compte - Vibes</title>
   <style>
+    /* Nord Theme Colors */
+    :root {
+      --nord0: #2e3440;   /* Polar Night - Darkest */
+      --nord1: #3b4252;   /* Polar Night - Dark */
+      --nord2: #434c5e;   /* Polar Night - Medium */
+      --nord3: #4c566a;   /* Polar Night - Light */
+      --nord4: #d8dee9;   /* Snow Storm - Dark */
+      --nord5: #e5e9f0;   /* Snow Storm - Medium */
+      --nord6: #eceff4;   /* Snow Storm - Light */
+      --nord7: #8fbcbb;   /* Frost - Light */
+      --nord8: #88c0d0;   /* Frost - Medium */
+      --nord9: #81a1c1;   /* Frost - Dark */
+      --nord10: #5e81ac;  /* Aurora - Light */
+      --nord11: #bf616a;  /* Aurora - Red */
+      --nord12: #d08770;  /* Aurora - Orange */
+      --nord13: #ebcb8b;  /* Aurora - Yellow */
+      --nord14: #a3be8c;  /* Aurora - Green */
+      --nord15: #b48ead;  /* Aurora - Purple */
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background-color: #fff;
+      color: var(--nord4);
+      background-color: var(--nord0);
       padding: 20px;
       margin: 0;
+      transition: all 0.3s ease;
     }
+    
     .container {
       max-width: 1000px;
       margin: 0 auto;
     }
+    
     header {
-      background-color: #f0f0f0;
-      padding: 20px;
+      background: linear-gradient(135deg, var(--nord1), var(--nord2));
+      padding: 30px 20px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--nord3);
     }
+    
     .logo {
       width: 80px;
       height: auto;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      filter: brightness(1.1) contrast(1.1);
     }
+    
     h1 {
-      font-size: 24px;
+      font-size: 28px;
       margin-bottom: 10px;
+      color: var(--nord6);
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
+    
     .subtitle {
       font-size: 16px;
       margin: 0 auto;
+      color: var(--nord8);
+      font-weight: 400;
     }
+    
     .section-title {
-      font-size: 20px;
-      margin: 20px 0 10px;
+      font-size: 22px;
+      margin: 30px 0 15px;
       text-align: center;
+      color: var(--nord7);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+    
     .cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      margin: 20px 0;
+      gap: 25px;
+      margin: 25px 0;
     }
+    
     .card {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      flex: 1 0 200px;
+      background: linear-gradient(145deg, var(--nord1), var(--nord2));
+      border: 1px solid var(--nord3);
+      border-radius: 12px;
+      flex: 1 0 250px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
     }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      border-color: var(--nord8);
+    }
+    
     .card-header {
-      background-color: #ddd;
-      padding: 10px;
-      font-weight: bold;
-    }
-    .card-header.app {
-      background-color: #eee;
-    }
-    .card-body {
+      background: linear-gradient(135deg, var(--nord3), var(--nord2));
       padding: 15px;
+      font-weight: 600;
+      color: var(--nord6);
+      border-bottom: 1px solid var(--nord3);
+      text-align: center;
     }
+    
+    .card-header.app {
+      background: linear-gradient(135deg, var(--nord10), var(--nord9));
+    }
+    
+    .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+    
     .card-link {
       display: inline-block;
-      background-color: #4a86e8;
-      color: white;
-      padding: 5px 10px;
+      background: linear-gradient(135deg, var(--nord10), var(--nord9));
+      color: var(--nord6);
+      padding: 12px 24px;
       text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid var(--nord8);
     }
+    
+    .card-link:hover {
+      background: linear-gradient(135deg, var(--nord9), var(--nord8));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(94, 129, 172, 0.3);
+    }
+    
     .card-link.app {
-      background-color: #ff9900;
+      background: linear-gradient(135deg, var(--nord14), var(--nord13));
+      border-color: var(--nord14);
     }
+    
+    .card-link.app:hover {
+      background: linear-gradient(135deg, var(--nord13), var(--nord12));
+      box-shadow: 0 4px 15px rgba(163, 190, 140, 0.3);
+    }
+    
     footer {
-      background-color: #f0f0f0;
+      background: linear-gradient(135deg, var(--nord1), var(--nord2));
       text-align: center;
-      padding: 20px 0;
-      margin-top: 30px;
+      padding: 30px 0;
+      margin-top: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--nord3);
     }
+    
     .footer-links a {
-      color: #4a86e8;
-      margin: 0 10px;
+      color: var(--nord8);
+      margin: 0 15px;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--nord7);
+      text-decoration: underline;
+    }
+    
+    /* Additional Nord theme enhancements */
+    p {
+      color: var(--nord5);
+      margin-bottom: 15px;
+    }
+    
+    a {
+      color: var(--nord8);
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--nord7);
+    }
+    
+    /* Responsive design improvements */
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+      }
+      
+      .card {
+        flex: 1 0 auto;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
