@@ -16,8 +16,6 @@ with app.setup:
 def _():
     mo.md(
         r"""
-        # Fibonacci Calculator
-
         Use the slider above to calculate the first {n.value} numbers in the Fibonacci sequence.
         """
     )
